@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { Dispatch, SetStateAction } from 'react';
 import useAxiosPublic from './useAxiosPublic';
 
-const useImgUpload = (setUploadingImg, setImageURL) => {
+const useImgUpload = (
+  setUploadingImg: Dispatch<SetStateAction<boolean>>, 
+  setImageURL: Dispatch<SetStateAction<string | null>>
+) => {
     const axiosPublic = useAxiosPublic();
 
     const handleImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {

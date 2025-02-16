@@ -1,5 +1,20 @@
+import React from "react";
 
-export const MemePreview = ({ imageURL, caption, fontSize, fontColor, sticker }) => {
+interface MemePreviewProps {
+  imageURL: string | null;
+  caption: string;
+  fontSize: number;
+  fontColor: string;
+  sticker: string | null
+}
+
+export const MemePreview:React.FC<MemePreviewProps> = ({ 
+  imageURL, 
+  caption, 
+  fontSize, 
+  fontColor, 
+  sticker 
+}) => {
   return (
     <div className="border-2 border-green-400 rounded-lg p-4 min-h-[300px] flex items-center justify-center bg-gray-800 relative overflow-hidden">
       {imageURL ? (

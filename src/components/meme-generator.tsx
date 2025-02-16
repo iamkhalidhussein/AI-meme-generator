@@ -13,14 +13,14 @@ export const MemeGenerator = () => {
     const [aiPower, setAiPower] = useState(50);
     const [isGenerating, setIsGenerating] = useState(false);
     const [uploadingImg, setUploadingImg] = useState(false);
-    const [imageURL, setImageURL] = useState(null);
+    const [imageURL, setImageURL] = useState<string | null>(null);
 
     useEffect(() => {
         const interval = setInterval(() => {
           setAiPower((prev) => (prev + 1) % 101)
         }, 100)
         return () => clearInterval(interval)
-      }, [])
+      }, []);
       
       const handleImageUpload = useImgUpload(setUploadingImg, setImageURL);
 
